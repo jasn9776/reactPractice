@@ -19,8 +19,9 @@ const SearchBar2 = ({onSearch}) => {
         }
 
         var url = "http://20.191.211.229:5000/v1/datafiles?patient_id=" + patientID + `${filetype ? `&filetype=${filetype}`: ""}`
-        + `${minSize ? `&minsize=${minSize}`: ""}` + `${maxSize ? `&maxsize=${maxSize}`: ""}`
-        + `${sampleType ? `&sampletype=${sampleType}`: ""}`;
+        + `${minSize ? `&minsize=${minSize}`: ""}` + `${maxSize ? `&maxsize=${maxSize}`: ""}` 
+        + `${sampleType ? `&sampletype=${sampleType}`: ""}` + "&show_metadata=true";
+        
         console.log(`${filetype ? `filetype=${filetype}`: ""}`)
         console.log(text)
         console.log(patientID)
@@ -30,7 +31,7 @@ const SearchBar2 = ({onSearch}) => {
     }
 
     return (
-        <form className='add-form' onSubmit=
+        <form className='search-form' onSubmit=
         {onSubmit}>
             <div className='input-form'>
                 <label>SearchQuery</label>
