@@ -26,7 +26,7 @@ const SearchBar3 = ({onSearch}) => {
     const [option, setOption] = React.useState('');
 
     const handleChange = (event) => {
-        setoption(event.target.value);
+        setOption(event.target.value);
     };
 
     const onSubmit = (e) => {
@@ -67,23 +67,7 @@ const SearchBar3 = ({onSearch}) => {
                 <input type='text' placeholder='Query'
                  value={text} onChange={(e) =>
                 setText(e.target.value)} />
-
-            </div> 
-
-
-            <div className='check-box'>
-                <label>Searchby PatientID</label>
-                <input type='checkbox' 
-                checked={patientID}
-                value={patientID} 
-                    onChange={(e) => setPatientID(e.currentTarget.checked)}
-                />
-            </div>         
-
-            <input type='submit' value='Search'
-            className='btn btn-block' />
-
-            <Select
+                <Select
                 labelId="demo-simple-select-label"
                 id="demo-simple-select"
                 value={option}
@@ -93,6 +77,12 @@ const SearchBar3 = ({onSearch}) => {
                 <MenuItem value={2}>SampleID</MenuItem>
                 <MenuItem value={3}>FileName</MenuItem>
             </Select>
+            </div> 
+
+            <input type='submit' value='Search'
+            className='btn btn-block' />
+
+           
 
         </form>
     )
