@@ -1,10 +1,8 @@
 import {useState} from 'react'
 import Select from '@material-ui/core/Select';
 import { makeStyles } from '@material-ui/core/styles';
-import InputLabel from '@material-ui/core/InputLabel';
 import MenuItem from '@material-ui/core/MenuItem';
-import FormHelperText from '@material-ui/core/FormHelperText';
-import FormControl from '@material-ui/core/FormControl';
+
 import React from 'react';
 
 const useStyles = makeStyles((theme) => ({
@@ -25,10 +23,10 @@ const SearchBar3 = ({onSearch}) => {
 
 
     const classes = useStyles();
-    const [age, setAge] = React.useState('');
+    const [option, setOption] = React.useState('');
 
     const handleChange = (event) => {
-        setAge(event.target.value);
+        setoption(event.target.value);
     };
 
     const onSubmit = (e) => {
@@ -46,10 +44,10 @@ const SearchBar3 = ({onSearch}) => {
         // var url = `${patientID ? "paitentID" :  "sampleID"}` + `${text}`;
         // console.log(`${filetype ? `filetype=${filetype}`: ""}`)
         var url = '';
-        console.log(age)
-        if (age === 1) {
+        console.log(option)
+        if (option === 1) {
             url += "patient";
-        } else if (age === 2) {
+        } else if (option === 2) {
             url += "sample";
         } 
 
@@ -86,14 +84,14 @@ const SearchBar3 = ({onSearch}) => {
             className='btn btn-block' />
 
             <Select
-            labelId="demo-simple-select-label"
-            id="demo-simple-select"
-            value={age}
-            onChange={handleChange}
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={option}
+                onChange={handleChange}
             >
-            <MenuItem value={1}>PatientID</MenuItem>
-            <MenuItem value={2}>SampleID</MenuItem>
-            <MenuItem value={3}>FileName</MenuItem>
+                <MenuItem value={1}>PatientID</MenuItem>
+                <MenuItem value={2}>SampleID</MenuItem>
+                <MenuItem value={3}>FileName</MenuItem>
             </Select>
 
         </form>
